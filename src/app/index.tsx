@@ -1,5 +1,5 @@
-import { fontFamily } from '@/styles/font-family'
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
+import { styles } from './styles'
 
 export default function Index() {
   return (
@@ -8,17 +8,3 @@ export default function Index() {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#1c1c1c',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 16,
-    fontFamily: fontFamily.regular,
-    color: '#fafafa',
-  },
-})
