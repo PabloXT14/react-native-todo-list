@@ -17,6 +17,11 @@ export const colors = {
     600: '#1e6f9f',
   },
 
+  purple: {
+    400: '#8284FA',
+    600: '#5E60CE',
+  },
+
   danger: {
     500: '#e25858',
   },
