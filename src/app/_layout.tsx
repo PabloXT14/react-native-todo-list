@@ -4,6 +4,7 @@ import {
   Inter_400Regular,
   Inter_700Bold,
 } from '@expo-google-fonts/inter'
+import { StatusBar } from 'react-native'
 
 export default function RootLayout() {
   const [loaded] = useFonts({
@@ -15,5 +16,14 @@ export default function RootLayout() {
     return null
   }
 
-  return <Slot />
+  return (
+    <>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      <Slot />
+    </>
+  )
 }
