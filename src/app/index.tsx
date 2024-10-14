@@ -2,6 +2,7 @@ import { Text, View } from 'react-native'
 import { styles } from './styles'
 
 import { TodoLogo } from '@/assets/todo-logo'
+import { Input } from '@/components/input'
 
 export default function Index() {
   return (
@@ -13,9 +14,7 @@ export default function Index() {
 
       {/* BODY */}
       <View style={styles.content}>
-        <Text style={styles.title}>
-          Edit app/index.tsx to edit this screen.
-        </Text>
+        <Input placeholder="Adicione uma nova tarefa" />
       </View>
     </View>
   )
