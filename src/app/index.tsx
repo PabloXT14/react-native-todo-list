@@ -3,6 +3,9 @@ import { styles } from './styles'
 
 import { TodoLogo } from '@/assets/todo-logo'
 import { Input } from '@/components/input'
+import { Button } from '@/components/button'
+import { PlusCircle } from 'lucide-react-native'
+import { colors } from '@/styles/colors'
 
 export default function Index() {
   return (
@@ -14,7 +17,12 @@ export default function Index() {
 
       {/* BODY */}
       <View style={styles.content}>
-        <Input placeholder="Adicione uma nova tarefa" />
+        <View style={styles.form}>
+          <Input placeholder="Adicione uma nova tarefa" />
+          <Button>
+            <PlusCircle size={16} color={colors.gray[100]} />
+          </Button>
+        </View>
       </View>
     </View>
   )

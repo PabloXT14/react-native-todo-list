@@ -27,4 +27,10 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     marginTop: -28,
   },
+  form: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+  },
 })
