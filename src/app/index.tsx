@@ -1,11 +1,12 @@
-import { Text, View } from 'react-native'
-import { styles } from './styles'
+import { View } from 'react-native'
+import { PlusCircle } from 'lucide-react-native'
 
 import { TodoLogo } from '@/assets/todo-logo'
 import { Input } from '@/components/input'
 import { Button } from '@/components/button'
-import { PlusCircle } from 'lucide-react-native'
 import { colors } from '@/styles/colors'
+
+import { styles } from './styles'
 
 export default function Index() {
   return (

@@ -15,7 +15,14 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.blue[400],
   },
   secondary: {
-    backgroundColor: '#04D361',
+    width: 32,
+    height: 32,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 4,
+    backgroundColor: 'transparent',
   },
-  secondaryFocus: {},
+  secondaryFocus: {
+    backgroundColor: colors.gray[400],
+  },
 })
