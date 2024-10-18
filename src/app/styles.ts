@@ -87,7 +87,7 @@ export const styles = StyleSheet.create({
   tasksList: {
     width: '100%',
     gap: 8,
-    marginBottom: 64,
+    paddingBottom: 64,
   },
   tasksListEmpty: {
     width: '100%',

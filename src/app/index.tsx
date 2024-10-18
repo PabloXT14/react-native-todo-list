@@ -8,6 +8,7 @@ import { colors } from '@/styles/colors'
 
 import { styles } from './styles'
 import { ClipBoardIcon } from '@/assets/clipboard-icon'
+import { Task } from '@/components/task'
 
 export default function Index() {
   return (
@@ -40,9 +41,9 @@ export default function Index() {
             </View>
           </View>
 
-          <ScrollView style={styles.tasksList}>
+          <ScrollView contentContainerStyle={styles.tasksList}>
             {/* EMPTY */}
-            <View style={styles.tasksListEmpty}>
+            {/* <View style={styles.tasksListEmpty}>
               <ClipBoardIcon />
               <View style={styles.tasksListEmptyContent}>
                 <Text style={styles.tasksListEmptyTextStrong}>
@@ -52,7 +53,39 @@ export default function Index() {
                   Crie tarefas e organize seus itens a fazer
                 </Text>
               </View>
-            </View>
+            </View> */}
+
+            <Task
+              id="001"
+              description="Integer urna interdum massa libero auctor neque turpis turpis semper."
+              isCompleted={false}
+              onToggle={() => {}}
+              onDelete={() => {}}
+            />
+            <Task
+              id="001"
+              description="Integer urna interdum massa libero auctor neque turpis turpis semper."
+              isCompleted={true}
+              onToggle={() => {}}
+              onDelete={() => {}}
+            />
+            <Task
+              id="001"
+              description="Integer urna interdum massa libero auctor neque turpis turpis semper."
+              isCompleted={false}
+              onToggle={() => {}}
+              onDelete={() => {}}
+            />
+            {Array.from({ length: 10 }).map((_, index) => (
+              <Task
+                key={Math.random() * 1000}
+                id="001"
+                description="Integer urna interdum massa libero auctor neque turpis turpis semper."
+                isCompleted={false}
+                onToggle={() => {}}
+                onDelete={() => {}}
+              />
+            ))}
           </ScrollView>
         </View>
       </View>
