@@ -3,11 +3,9 @@ import { Check, Trash2 } from 'lucide-react-native'
 import { Pressable, Text, View } from 'react-native'
 import { styles } from './styles'
 import { Button } from '../button'
+import type { TaskType } from '@/@types/task'
 
-export type TaskProps = {
-  id: string
-  description: string
-  isCompleted: boolean
+export type TaskProps = TaskType & {
   onToggle: (id: string) => void
   onDelete: (id: string) => void
 }

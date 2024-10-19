@@ -1,5 +1,6 @@
-import { ScrollView, Text, View } from 'react-native'
+import { FlatList, ScrollView, Text, View } from 'react-native'
 import { PlusCircle } from 'lucide-react-native'
+import { createId } from '@paralleldrive/cuid2'
 
 import { TodoLogo } from '@/assets/todo-logo'
 import { Input } from '@/components/input'
@@ -8,9 +9,28 @@ import { colors } from '@/styles/colors'
 
 import { styles } from './styles'
 import { ClipBoardIcon } from '@/assets/clipboard-icon'
+import type { TaskType } from '@/@types/task'
+import { useState } from 'react'
 import { Task } from '@/components/task'
 
 export default function Index() {
+  const [tasks, setTasks] = useState<TaskType[]>([])
+  const [taskDescription, setTaskDescription] = useState('')
+
+  function handleAddTask(description: string) {
+    if (!description.trim()) return
+
+    const newTask: TaskType = {
+      id: createId(),
+      description: description.trim(),
+      isCompleted: false,
+      createdAt: new Date(),
+    }
+
+    setTasks(prevState => [newTask, ...prevState])
+    setTaskDescription('')
+  }
+
   return (
     <View style={styles.container}>
       {/* HEADER */}
@@ -21,8 +41,12 @@ export default function Index() {
       {/* BODY */}
       <View style={styles.content}>
         <View style={styles.form}>
-          <Input placeholder="Adicione uma nova tarefa" />
-          <Button>
+          <Input
+            placeholder="Adicione uma nova tarefa"
+            value={taskDescription}
+            onChangeText={setTaskDescription}
+          />
+          <Button onPress={() => handleAddTask(taskDescription)}>
             <PlusCircle size={16} color={colors.gray[100]} />
           </Button>
         </View>
@@ -41,52 +65,28 @@ export default function Index() {
             </View>
           </View>
 
-          <ScrollView contentContainerStyle={styles.tasksList}>
-            {/* EMPTY */}
-            {/* <View style={styles.tasksListEmpty}>
-              <ClipBoardIcon />
-              <View style={styles.tasksListEmptyContent}>
-                <Text style={styles.tasksListEmptyTextStrong}>
-                  Você ainda não tem tarefas cadastradas
-                </Text>
-                <Text style={styles.tasksListEmptyText}>
-                  Crie tarefas e organize seus itens a fazer
-                </Text>
+          <FlatList
+            data={tasks}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => (
+              <Task {...item} onToggle={() => {}} onDelete={() => {}} />
+            )}
+            contentContainerStyle={styles.tasksList}
+            ListEmptyComponent={
+              <View style={styles.tasksListEmpty}>
+                <ClipBoardIcon />
+                <View style={styles.tasksListEmptyContent}>
+                  <Text style={styles.tasksListEmptyTextStrong}>
+                    Você ainda não tem tarefas cadastradas
+                  </Text>
+                  <Text style={styles.tasksListEmptyText}>
+                    Crie tarefas e organize seus itens a fazer
+                  </Text>
+                </View>
               </View>
-            </View> */}
-
-            <Task
-              id="001"
-              description="Integer urna interdum massa libero auctor neque turpis turpis semper."
-              isCompleted={false}
-              onToggle={() => {}}
-              onDelete={() => {}}
-            />
-            <Task
-              id="001"
-              description="Integer urna interdum massa libero auctor neque turpis turpis semper."
-              isCompleted={true}
-              onToggle={() => {}}
-              onDelete={() => {}}
-            />
-            <Task
-              id="001"
-              description="Integer urna interdum massa libero auctor neque turpis turpis semper."
-              isCompleted={false}
-              onToggle={() => {}}
-              onDelete={() => {}}
-            />
-            {Array.from({ length: 10 }).map((_, index) => (
-              <Task
-                key={Math.random() * 1000}
-                id="001"
-                description="Integer urna interdum massa libero auctor neque turpis turpis semper."
-                isCompleted={false}
-                onToggle={() => {}}
-                onDelete={() => {}}
-              />
-            ))}
-          </ScrollView>
+            }
+            showsVerticalScrollIndicator={false}
+          />
         </View>
       </View>
     </View>
