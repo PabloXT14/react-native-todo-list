@@ -46,6 +46,12 @@ export default function Index() {
     setTasks(newTasks)
   }
 
+  function handleDeleteTask(taskId: string) {
+    const newTasks = tasks.filter(task => task.id !== taskId)
+
+    setTasks(newTasks)
+  }
+
   return (
     <View style={styles.container}>
       {/* HEADER */}
@@ -84,7 +90,11 @@ export default function Index() {
             data={tasks}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
-              <Task {...item} onToggle={handleToggleTask} onDelete={() => {}} />
+              <Task
+                {...item}
+                onToggle={handleToggleTask}
+                onDelete={handleDeleteTask}
+              />
             )}
             contentContainerStyle={styles.tasksList}
             ListEmptyComponent={
