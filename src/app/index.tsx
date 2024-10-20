@@ -52,6 +52,9 @@ export default function Index() {
     setTasks(newTasks)
   }
 
+  const totalCreatedTasks = tasks.length
+  const totalCompletedTasks = tasks.filter(task => task.isCompleted).length
+
   return (
     <View style={styles.container}>
       {/* HEADER */}
@@ -77,12 +80,16 @@ export default function Index() {
           <View style={styles.tasksHeader}>
             <View style={styles.createdTasksInfo}>
               <Text style={styles.createdTasksInfoText}>Criadas</Text>
-              <Text style={styles.createdTasksInfoNumber}>0</Text>
+              <Text style={styles.createdTasksInfoNumber}>
+                {totalCreatedTasks}
+              </Text>
             </View>
 
             <View style={styles.completedTasksInfo}>
               <Text style={styles.completedTasksInfoText}>Concluídas</Text>
-              <Text style={styles.completedTasksInfoNumber}>0</Text>
+              <Text style={styles.completedTasksInfoNumber}>
+                {totalCompletedTasks}
+              </Text>
             </View>
           </View>
 
