@@ -31,6 +31,21 @@ export default function Index() {
     setTaskDescription('')
   }
 
+  function handleToggleTask(taskId: string) {
+    const newTasks = tasks.map(task => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          isCompleted: !task.isCompleted,
+        }
+      }
+
+      return task
+    })
+
+    setTasks(newTasks)
+  }
+
   return (
     <View style={styles.container}>
       {/* HEADER */}
@@ -69,7 +84,7 @@ export default function Index() {
             data={tasks}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
-              <Task {...item} onToggle={() => {}} onDelete={() => {}} />
+              <Task {...item} onToggle={handleToggleTask} onDelete={() => {}} />
             )}
             contentContainerStyle={styles.tasksList}
             ListEmptyComponent={
