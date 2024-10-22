@@ -1,6 +1,6 @@
 <h1 align="center">
   <img
-    src=".github/nlw-pocket-logo.svg"
+    src=".github/todo-list-logo.svg"
     title="React Native Todo List"
     alt="React Native Todo List"
   />
@@ -43,13 +43,9 @@
 
 ## 💻 About
 
-Esta aplicação de nome **in.orbit**, consiste em um site desktop para registro de metas além de contar com um progresso semanal das metas já completadas e das pendentes.
+Esta aplicação de nome **todo**, consiste basicamente de uma aplicação mobile de criação e controle de tarefas.
 
-Os principais aprendizados neste projeto foram a implementação de um back-end (API) utilizando o framework `Fastify`, para construção de rotas, requisições HTTP e tratamento de erros, contando também com a utilização do ORM `Drizzle` para a persistência de dados e conexão com o banco de dados. Valendo também apontar o uso de princípios de `SOLID` para a implementação desse back-end.   
-
-Além disso, contou também a implementação da interface front-end utilizando `React + Vite` e da incrivelmente útil biblioteca de "utility classes" (classes utilitárias) `TailwindCSS` para uma fácil estilização de elementos da interface. E para lidar com as requisições na parte do front-end, utilizou-se a biblioteca `React Query`, que apresenta um formato de fetch de dados muito bem estruturado e enxuto, tendo também seu ótimo sistema de cache e reutilização de dados. Ademais, teve-se a aplicação da biblioteca `React Hook Form` para a validação de formulários de uma forma fácil e eficaz.
-
-Todavia, vale ressaltar que essa aplicação foi desenvolvida durante o NLW Pocket JS da [Rocketseat](https://www.rocketseat.com.br/) utilizando principalmente tecnologias como `Node`, `React`, `TypeScript`, `Fastify`, `Drizzle`, `Vite`, `React Query` e `Tailwind`.
+Todavia, vale ressaltar que esse projeto é um dos desafios da trilha de `React Native` da escola de tecnologia [Rocketseat](https://www.rocketseat.com.br/).
 
 
 <!-- ## 🔗 Deploy
@@ -59,54 +55,42 @@ O deploy da aplicação pode ser acessada através da seguinte URL base: https:/
 
 ## 🎨 Layout
 
-Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/community/file/1415093862269754302/react-native-todo-list). É necessário ter conta no [Figma](https://www.figma.com/) para acessá-lo.
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/1XfZQGSWk4HWjvwcjd2nOP/ToDo-List/duplicate). É necessário ter conta no [Figma](https://www.figma.com/) para acessá-lo.
 
 A seguir, veja uma demonstração das principais telas da aplicação:
 
-### Empty
+### Todo Empty
 
 <p align="center">
   <img
-    src=".github/screens/empty.png"
-    alt="Empty Goals Page"
-    title="Empty Goals Page"
-    width="100%"
+    src=".github/screens/todo-empty.png"
+    alt="Todo Empty Screen"
+    title="Todo Empty Screen"
+    width="auto"
   />
 </p>
 
-### Create Goal
+### Todo Description
 
 <p align="center">
   <img
-    src=".github/screens/create-goal.png"
-    alt="Create Goal"
-    title="Create Goal"
-    width="100%"
+    src=".github/screens/todo-description.png"
+    alt="Todo Description Screen"
+    title="Todo Description Screen"
+    width="auto"
   />
 </p>
 
-### Goals (empty)
+### Todo List
 
 <p align="center">
   <img
-    src=".github/screens/goals-empty.png"
-    alt="Goals (empty)"
-    title="Goals (empty)"
-    width="100%"
+    src=".github/screens/todo-list.png"
+    alt="Todo List Screen"
+    title="Todo List Screen"
+    width="auto"
   />
 </p>
-
-### Goals (filled)
-
-<p align="center">
-  <img
-    src=".github/screens/goals-filled.png"
-    alt="Goals (filled)"
-    title="Goals (filled)"
-    width="100%"
-  />
-</p>
-
 
 ## ⚙ Setup
 
@@ -145,32 +129,12 @@ $ npm run start
 
 As seguintes principais ferramentas foram usadas na construção do projeto:
 
-### Back-end
-
+- **[React Native + Expo](https://vitejs.dev/)**
 - **[TypeScript](https://www.typescriptlang.org/)**
-- **[Fastify](https://fastify.dev/)**
-- **[Drizzle](https://orm.drizzle.team/)**
-- **[Postgres](https://www.npmjs.com/package/postgres)**
-- **[Zod](https://zod.dev/)**
-- **[DayJS](https://day.js.org/)**
-- **[@paralleldrive/cuid2](https://github.com/paralleldrive/cuid2)**
+- **[Lucide React Native](https://lucide.dev/guide/packages/lucide-react-native)**
+- **[@expo-google-fonts](https://docs.expo.dev/develop/user-interface/fonts/#with-usefonts-hook-1)**
 
-> Para mais detalhes das dependências gerais da aplicação veja o arquivo [package.json](./server/package.json)
-
-### Front-end
-
-- **[React + Vite](https://vitejs.dev/)**
-- **[TypeScript](https://www.typescriptlang.org/)**
-- **[TailwindCSS](https://tailwindcss.com/)**
-- **[TailwindCSS Variants](https://www.tailwind-variants.org/)**
-- **[React Query](https://tanstack.com/query/latest)**
-- **[Lucide](https://lucide.dev/)**
-- **[DayJS](https://day.js.org/)**
-- **[Radix UI](https://www.radix-ui.com/)**
-- **[React Hook Form](https://react-hook-form.com/)**
-- **[@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers)**
-
-> Para mais detalhes das dependências gerais da aplicação veja o arquivo [package.json](./web/package.json)
+> Para mais detalhes das dependências gerais da aplicação veja o arquivo [package.json](./package.json)
 
 
 ## 📝 License
