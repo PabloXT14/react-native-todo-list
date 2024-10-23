@@ -10,12 +10,14 @@ import { colors } from '@/styles/colors'
 import { styles } from './styles'
 import { ClipBoardIcon } from '@/assets/clipboard-icon'
 import type { TaskType } from '@/@types/task'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Task } from '@/components/task'
+import { HomeSkeleton } from '@/components/skeletons/home-skeleton'
 
 export default function Index() {
   const [tasks, setTasks] = useState<TaskType[]>([])
   const [taskDescription, setTaskDescription] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
 
   function handleAddTask(description: string) {
     if (!description.trim()) return
@@ -54,6 +56,14 @@ export default function Index() {
 
   const totalCreatedTasks = tasks.length
   const totalCompletedTasks = tasks.filter(task => task.isCompleted).length
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 5000)
+  }, [])
+
+  if (isLoading) return <HomeSkeleton />
 
   return (
     <View style={styles.container}>
